@@ -1,0 +1,75 @@
+// Enum for Gender
+enum Gender {
+    PRIA, WANITA
+}
+
+// Enum for Location
+enum Location {
+    SEMARANG, JAKARTA
+}
+
+// Base class for Karyawan
+abstract class Karyawan {
+    protected String nama;
+    protected Gender gender;
+    protected Location lokasi;
+
+    public Karyawan(String nama, Gender gender, Location lokasi) {
+        this.nama = nama;
+        this.gender = gender;
+        this.lokasi = lokasi;
+    }
+
+    public abstract void displayInfo();
+}
+
+// Subclass for Direktur
+class Direktur extends Karyawan {
+    public Direktur(String nama, Gender gender, Location lokasi) {
+        super(nama, gender, lokasi);
+    }
+
+    @Override
+    public void displayInfo() {
+        System.out.println("Direktur: " + nama + ", Gender: " + gender + ", Lokasi: " + lokasi);
+    }
+}
+
+// Subclass for Staf
+class Staf extends Karyawan {
+    public Staf(String nama, Gender gender, Location lokasi) {
+        super(nama, gender, lokasi);
+    }
+
+    @Override
+    public void displayInfo() {
+        System.out.println("Staf: " + nama + ", Gender: " + gender + ", Lokasi: " + lokasi);
+    }
+}
+
+// Subclass for Manajer
+class Manajer extends Karyawan {
+    public Manajer(String nama, Gender gender, Location lokasi) {
+        super(nama, gender, lokasi);
+    }
+
+    @Override
+    public void displayInfo() {
+        System.out.println("Manajer: " + nama + ", Gender: " + gender + ", Lokasi: " + lokasi);
+    }
+}
+
+// Main class to run the program
+public class Main {
+    public static void main(String[] args) {
+        // Creating instances of Direktur, Staf, and Manajer with different gender and location
+        Karyawan direktur1 = new Direktur("Budi", Gender.PRIA, Location.SEMARANG);
+        Karyawan staf1 = new Staf("Siti", Gender.WANITA, Location.JAKARTA);
+        Karyawan manajer1 = new Manajer("Andi", Gender.PRIA, Location.SEMARANG);
+
+        // Displaying their information
+        direktur1.displayInfo();
+        staf1.displayInfo();
+        manajer1.displayInfo();
+    }
+}
