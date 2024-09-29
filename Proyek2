@@ -1,0 +1,234 @@
+// Kelas utama Karyawan
+abstract class Karyawan {
+    protected String nama;
+
+    public Karyawan(String nama) {
+        this.nama = nama;
+    }
+
+    public abstract void displayInfo();
+}
+
+// Subclass untuk Direktur
+abstract class Direktur extends Karyawan {
+    public Direktur(String nama) {
+        super(nama);
+    }
+}
+
+// Subclass untuk Staf
+abstract class Staf extends Karyawan {
+    public Staf(String nama) {
+        super(nama);
+    }
+}
+
+// Subclass untuk Manajer
+abstract class Manajer extends Karyawan {
+    public Manajer(String nama) {
+        super(nama);
+    }
+}
+
+// Subclass untuk Lokasi
+abstract class Lokasi extends Karyawan {
+    public Lokasi(String nama) {
+        super(nama);
+    }
+}
+
+// Subclass untuk Semarang
+abstract class Semarang extends Lokasi {
+    public Semarang(String nama) {
+        super(nama);
+    }
+}
+
+// Subclass untuk Jakarta
+abstract class Jakarta extends Lokasi {
+    public Jakarta(String nama) {
+        super(nama);
+    }
+}
+
+// Subclass untuk Pria di Semarang
+class SemarangDirekturPria extends Direktur {
+    public SemarangDirekturPria(String nama) {
+        super(nama);
+    }
+
+    @Override
+    public void displayInfo() {
+        System.out.println(nama + ": Direktur + Di Semarang + Pria");
+    }
+}
+
+// Subclass untuk Wanita di Semarang
+class SemarangDirekturWanita extends Direktur {
+    public SemarangDirekturWanita(String nama) {
+        super(nama);
+    }
+
+    @Override
+    public void displayInfo() {
+        System.out.println(nama + ": Direktur + Di Semarang + Wanita");
+    }
+}
+
+// Subclass untuk Pria di Jakarta
+class JakartaDirekturPria extends Direktur {
+    public JakartaDirekturPria(String nama) {
+        super(nama);
+    }
+
+    @Override
+    public void displayInfo() {
+        System.out.println(nama + ": Direktur + Di Jakarta + Pria");
+    }
+}
+
+// Subclass untuk Wanita di Jakarta
+class JakartaDirekturWanita extends Direktur {
+    public JakartaDirekturWanita(String nama) {
+        super(nama);
+    }
+
+    @Override
+    public void displayInfo() {
+        System.out.println(nama + ": Direktur + Di Jakarta + Wanita");
+    }
+}
+
+// Subclass untuk Pria di Staf Semarang
+class SemarangStafPria extends Staf {
+    public SemarangStafPria(String nama) {
+        super(nama);
+    }
+
+    @Override
+    public void displayInfo() {
+        System.out.println(nama + ": Staf + Di Semarang + Pria");
+    }
+}
+
+// Subclass untuk Wanita di Staf Semarang
+class SemarangStafWanita extends Staf {
+    public SemarangStafWanita(String nama) {
+        super(nama);
+    }
+
+    @Override
+    public void displayInfo() {
+        System.out.println(nama + ": Staf + Di Semarang + Wanita");
+    }
+}
+
+// Subclass untuk Pria di Staf Jakarta
+class JakartaStafPria extends Staf {
+    public JakartaStafPria(String nama) {
+        super(nama);
+    }
+
+    @Override
+    public void displayInfo() {
+        System.out.println(nama + ": Staf + Di Jakarta + Pria");
+    }
+}
+
+// Subclass untuk Wanita di Staf Jakarta
+class JakartaStafWanita extends Staf {
+    public JakartaStafWanita(String nama) {
+        super(nama);
+    }
+
+    @Override
+    public void displayInfo() {
+        System.out.println(nama + ": Staf + Di Jakarta + Wanita");
+    }
+}
+
+// Subclass untuk Pria di Manajer Semarang
+class SemarangManajerPria extends Manajer {
+    public SemarangManajerPria(String nama) {
+        super(nama);
+    }
+
+    @Override
+    public void displayInfo() {
+        System.out.println(nama + ": Manajer + Di Semarang + Pria");
+    }
+}
+
+// Subclass untuk Wanita di Manajer Semarang
+class SemarangManajerWanita extends Manajer {
+    public SemarangManajerWanita(String nama) {
+        super(nama);
+    }
+
+    @Override
+    public void displayInfo() {
+        System.out.println(nama + ": Manajer + Di Semarang + Wanita");
+    }
+}
+
+// Subclass untuk Pria di Manajer Jakarta
+class JakartaManajerPria extends Manajer {
+    public JakartaManajerPria(String nama) {
+        super(nama);
+    }
+
+    @Override
+    public void displayInfo() {
+        System.out.println(nama + ": Manajer + Di Jakarta + Pria");
+    }
+}
+
+// Subclass untuk Wanita di Manajer Jakarta
+class JakartaManajerWanita extends Manajer {
+    public JakartaManajerWanita(String nama) {
+        super(nama);
+    }
+
+    @Override
+    public void displayInfo() {
+        System.out.println(nama + ": Manajer + Di Jakarta + Wanita");
+    }
+}
+
+// Kelas utama untuk menjalankan program
+public class Main {
+    public static void main(String[] args) {
+        // Membuat instance dari masing-masing subclass
+
+        // Semarang
+        Karyawan semarangDirekturPria = new SemarangDirekturPria("Budi");
+        Karyawan semarangDirekturWanita = new SemarangDirekturWanita("Siti");
+        Karyawan semarangStafPria = new SemarangStafPria("Andi");
+        Karyawan semarangStafWanita = new SemarangStafWanita("Rina");
+        Karyawan semarangManajerPria = new SemarangManajerPria("Joko");
+        Karyawan semarangManajerWanita = new SemarangManajerWanita("Dewi");
+
+        // Jakarta
+        Karyawan jakartaDirekturPria = new JakartaDirekturPria("Ali");
+        Karyawan jakartaDirekturWanita = new JakartaDirekturWanita("Nina");
+        Karyawan jakartaStafPria = new JakartaStafPria("Fajar");
+        Karyawan jakartaStafWanita = new JakartaStafWanita("Lina");
+        Karyawan jakartaManajerPria = new JakartaManajerPria("Tommy");
+        Karyawan jakartaManajerWanita = new JakartaManajerWanita("Sari");
+
+        // Menampilkan informasi
+        semarangDirekturPria.displayInfo();
+        semarangDirekturWanita.displayInfo();
+        semarangStafPria.displayInfo();
+        semarangStafWanita.displayInfo();
+        semarangManajerPria.displayInfo();
+        semarangManajerWanita.displayInfo();
+
+        jakartaDirekturPria.displayInfo();
+        jakartaDirekturWanita.displayInfo();
+        jakartaStafPria.displayInfo();
+        jakartaStafWanita.displayInfo();
+        jakartaManajerPria.displayInfo();
+        jakartaManajerWanita.displayInfo();
+    }
+}
