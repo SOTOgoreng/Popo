@@ -1,0 +1,375 @@
+package Proyek;
+
+interface Position {
+    String getPosition();
+}
+
+interface Location {
+    String getLocation();
+}
+
+interface Gender {
+    String getGender();
+}
+
+abstract class Karyawan {
+    protected String nama;
+
+    public Karyawan(String nama) {
+        this.nama = nama;
+    }
+
+    public abstract void displayInfo();
+}
+
+abstract class Direktur extends Karyawan implements Position {
+    public Direktur(String nama) {
+        super(nama);
+    }
+}
+
+abstract class Staf extends Karyawan implements Position {
+    public Staf(String nama) {
+        super(nama);
+    }
+}
+
+abstract class Manajer extends Karyawan implements Position {
+    public Manajer(String nama) {
+        super(nama);
+    }
+}
+
+abstract class SemarangDirektur extends Direktur implements Location {
+    public SemarangDirektur(String nama) {
+        super(nama);
+    }
+}
+
+abstract class JakartaDirektur extends Direktur implements Location {
+    public JakartaDirektur(String nama) {
+        super(nama);
+    }
+}
+
+abstract class SemarangManajer extends Manajer implements Location {
+    public SemarangManajer(String nama) {
+        super(nama);
+    }
+}
+
+abstract class JakartaManajer extends Manajer implements Location {
+    public JakartaManajer(String nama) {
+        super(nama);
+    }
+}
+
+abstract class SemarangStaf extends Staf implements Location {
+    public SemarangStaf(String nama) {
+        super(nama);
+    }
+}
+
+abstract class JakartaStaf extends Staf implements Location {
+    public JakartaStaf(String nama) {
+        super(nama);
+    }
+}
+
+class SemarangDirekturPria extends SemarangDirektur implements Gender {
+    public SemarangDirekturPria(String nama) {
+        super(nama);
+    }
+
+    public void displayInfo() {
+        System.out.println(nama + ": Direktur + Di Semarang + Pria");
+    }
+
+    public String getPosition() {
+        return "Direktur";
+    }
+
+    public String getLocation() {
+        return "Semarang";
+    }
+
+    public String getGender() {
+        return "Pria";
+    }
+}
+
+class SemarangDirekturWanita extends SemarangDirektur implements Gender {
+    public SemarangDirekturWanita(String nama) {
+        super(nama);
+    }
+
+    public void displayInfo() {
+        System.out.println(nama + ": Direktur + Di Semarang + Wanita");
+    }
+
+    public String getPosition() {
+        return "Direktur";
+    }
+
+    public String getLocation() {
+        return "Semarang";
+    }
+
+    public String getGender() {
+        return "Wanita";
+    }
+}
+
+
+class JakartaDirekturPria extends JakartaDirektur implements Gender {
+    public JakartaDirekturPria(String nama) {
+        super(nama);
+    }
+
+    public void displayInfo() {
+        System.out.println(nama + ": Direktur + Di Jakarta + Pria");
+    }
+
+    public String getPosition() {
+        return "Direktur";
+    }
+
+    public String getLocation() {
+        return "Jakarta";
+    }
+
+    public String getGender() {
+        return "Pria";
+    }
+}
+
+class JakartaDirekturWanita extends JakartaDirektur implements Gender {
+    public JakartaDirekturWanita(String nama) {
+        super(nama);
+    }
+
+    public void displayInfo() {
+        System.out.println(nama + ": Direktur + Di Jakarta + Wanita");
+    }
+
+    public String getPosition() {
+        return "Direktur";
+    }
+
+    public String getLocation() {
+        return "Jakarta";
+    }
+
+    public String getGender() {
+        return "Wanita";
+    }
+}
+
+// Implementations for Staf and Manajer classes
+class SemarangStafPria extends SemarangStaf implements Gender {
+    public SemarangStafPria(String nama) {
+        super(nama);
+    }
+
+    public void displayInfo() {
+        System.out.println(nama + ": Staf + Di Semarang + Pria");
+    }
+
+    public String getPosition() {
+        return "Staf";
+    }
+
+    public String getLocation() {
+        return "Semarang";
+    }
+
+    public String getGender() {
+        return "Pria";
+    }
+}
+
+class SemarangStafWanita extends SemarangStaf implements Gender {
+    public SemarangStafWanita(String nama) {
+        super(nama);
+    }
+
+    public void displayInfo() {
+        System.out.println(nama + ": Staf + Di Semarang + Wanita");
+    }
+
+    public String getPosition() {
+        return "Staf";
+    }
+
+    public String getLocation() {
+        return "Semarang";
+    }
+
+    public String getGender() {
+        return "Wanita";
+    }
+}
+
+class JakartaStafPria extends JakartaStaf implements Gender {
+    public JakartaStafPria(String nama) {
+        super(nama);
+    }
+
+    public void displayInfo() {
+        System.out.println(nama + ": Staf + Di Jakarta + Pria");
+    }
+
+    public String getPosition() {
+        return "Staf";
+    }
+
+    public String getLocation() {
+        return "Jakarta";
+    }
+
+    public String getGender() {
+        return "Pria";
+    }
+}
+
+class JakartaStafWanita extends JakartaStaf implements Gender {
+    public JakartaStafWanita(String nama) {
+        super(nama);
+    }
+
+    public void displayInfo() {
+        System.out.println(nama + ": Staf + Di Jakarta + Wanita");
+    }
+
+    public String getPosition() {
+        return "Staf";
+    }
+
+    public String getLocation() {
+        return "Jakarta";
+    }
+
+    public String getGender() {
+        return "Wanita";
+    }
+}
+
+class SemarangManajerPria extends SemarangManajer implements Gender {
+    public SemarangManajerPria(String nama) {
+        super(nama);
+    }
+
+    public void displayInfo() {
+        System.out.println(nama + ": Manajer + Di Semarang + Pria");
+    }
+
+    public String getPosition() {
+        return "Manajer";
+    }
+
+    public String getLocation() {
+        return "Semarang";
+    }
+
+    public String getGender() {
+        return "Pria";
+    }
+}
+
+class SemarangManajerWanita extends SemarangManajer implements Gender {
+    public SemarangManajerWanita(String nama) {
+        super(nama);
+    }
+
+    public void displayInfo() {
+        System.out.println(nama + ": Manajer + Di Semarang + Wanita");
+    }
+
+    public String getPosition() {
+        return "Manajer";
+    }
+
+    public String getLocation() {
+        return "Semarang";
+    }
+
+    public String getGender() {
+        return "Wanita";
+    }
+}
+
+class JakartaManajerPria extends JakartaManajer implements Gender {
+    public JakartaManajerPria(String nama) {
+        super(nama);
+    }
+
+    public void displayInfo() {
+        System.out.println(nama + ": Manajer + Di Jakarta + Pria");
+    }
+
+    public String getPosition() {
+        return "Manajer";
+    }
+
+    public String getLocation() {
+        return "Jakarta";
+    }
+
+    public String getGender() {
+        return "Pria";
+    }
+}
+
+class JakartaManajerWanita extends JakartaManajer implements Gender {
+    public JakartaManajerWanita(String nama) {
+        super(nama);
+    }
+
+    public void displayInfo() {
+        System.out.println(nama + ": Manajer + Di Jakarta + Wanita");
+    }
+
+    public String getPosition() {
+        return "Manajer";
+    }
+
+    public String getLocation() {
+        return "Jakarta";
+    }
+
+    public String getGender() {
+        return "Wanita";
+    }
+}
+
+public class mainproyek {
+    public static void main(String[] args) {
+        Karyawan semarangDirekturPria = new SemarangDirekturPria("Budi");
+        Karyawan semarangDirekturWanita = new SemarangDirekturWanita("Siti");
+        Karyawan semarangStafPria = new SemarangStafPria("Andi");
+        Karyawan semarangStafWanita = new SemarangStafWanita("Rina");
+        Karyawan semarangManajerPria = new SemarangManajerPria("Joko");
+        Karyawan semarangManajerWanita = new SemarangManajerWanita("Dewi");
+
+        Karyawan jakartaDirekturPria = new JakartaDirekturPria("Ali");
+        Karyawan jakartaDirekturWanita = new JakartaDirekturWanita("Nina");
+        Karyawan jakartaStafPria = new JakartaStafPria("Fajar");
+        Karyawan jakartaStafWanita = new JakartaStafWanita("Lina");
+        Karyawan jakartaManajerPria = new JakartaManajerPria("Tommy");
+        Karyawan jakartaManajerWanita = new JakartaManajerWanita("Sari");
+
+        semarangDirekturPria.displayInfo();
+        semarangDirekturWanita.displayInfo();
+        semarangStafPria.displayInfo();
+        semarangStafWanita.displayInfo();
+        semarangManajerPria.displayInfo();
+        semarangManajerWanita.displayInfo();
+
+        jakartaDirekturPria.displayInfo();
+        jakartaDirekturWanita.displayInfo();
+        jakartaStafPria.displayInfo();
+        jakartaStafWanita.displayInfo();
+        jakartaManajerPria.displayInfo();
+        jakartaManajerWanita.displayInfo();
+    }
+}
