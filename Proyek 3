@@ -1,0 +1,135 @@
+package Proyek;
+
+// Interface untuk Posisi
+interface Position {
+    String getPosition();
+}
+
+// Interface untuk Lokasi
+interface Location {
+    String getLocation();
+}
+
+// Interface untuk Gender
+interface Gender {
+    String getGender();
+}
+
+// Implementasi Interface Position
+class Direktur implements Position {
+    @Override
+    public String getPosition() {
+        return "Direktur";
+    }
+}
+
+class Manajer implements Position {
+    @Override
+    public String getPosition() {
+        return "Manajer";
+    }
+}
+
+class Staf implements Position {
+    @Override
+    public String getPosition() {
+        return "Staf";
+    }
+}
+
+// Implementasi Interface Location
+class Semarang implements Location {
+    @Override
+    public String getLocation() {
+        return "Semarang";
+    }
+}
+
+class Jakarta implements Location {
+    @Override
+    public String getLocation() {
+        return "Jakarta";
+    }
+}
+
+// Implementasi Interface Gender
+class Pria implements Gender {
+    @Override
+    public String getGender() {
+        return "Pria";
+    }
+}
+
+class Wanita implements Gender {
+    @Override
+    public String getGender() {
+        return "Wanita";
+    }
+}
+
+// Kelas Karyawan menggunakan komposisi dengan interface
+class Karyawan {
+    private String nama;
+    private Position position;
+    private Location location;
+    private Gender gender;
+
+    public Karyawan(String nama, Position position, Location location, Gender gender) {
+        this.nama = nama;
+        this.position = position;
+        this.location = location;
+        this.gender = gender;
+    }
+
+    public void displayInfo() {
+        System.out.println(nama + ": " + position.getPosition() + " + Di " + location.getLocation() + " + " + gender.getGender());
+    }
+}
+
+// Kelas Main untuk menjalankan program
+public class mainproyek {
+    public static void main(String[] args) {
+        // Membuat instance Posisi
+        Position direktur = new Direktur();
+        Position manajer = new Manajer();
+        Position staf = new Staf();
+
+        // Membuat instance Lokasi
+        Location semarang = new Semarang();
+        Location jakarta = new Jakarta();
+
+        // Membuat instance Gender
+        Gender pria = new Pria();
+        Gender wanita = new Wanita();
+
+        // Membuat instance Karyawan dengan berbagai kombinasi
+        Karyawan karyawan1 = new Karyawan("Budi", manajer, semarang, pria);
+        Karyawan karyawan2 = new Karyawan("Siti", direktur, semarang, wanita);
+        Karyawan karyawan3 = new Karyawan("Andi", staf, semarang, pria);
+        Karyawan karyawan4 = new Karyawan("Rina", staf, semarang, wanita);
+        Karyawan karyawan5 = new Karyawan("Joko", manajer, semarang, pria);
+        Karyawan karyawan6 = new Karyawan("Dewi", manajer, semarang, wanita);
+
+        Karyawan karyawan7 = new Karyawan("Ali", direktur, jakarta, pria);
+        Karyawan karyawan8 = new Karyawan("Nina", direktur, jakarta, wanita);
+        Karyawan karyawan9 = new Karyawan("Fajar", staf, jakarta, pria);
+        Karyawan karyawan10 = new Karyawan("Lina", staf, jakarta, wanita);
+        Karyawan karyawan11 = new Karyawan("Tommy", manajer, jakarta, pria);
+        Karyawan karyawan12 = new Karyawan("Sari", manajer, jakarta, wanita);
+
+        // Menampilkan informasi Karyawan
+        karyawan1.displayInfo();   // Output: Budi: Manajer + Di Semarang + Pria
+        karyawan2.displayInfo();   // Output: Siti: Direktur + Di Semarang + Wanita
+        karyawan3.displayInfo();   // Output: Andi: Staf + Di Semarang + Pria
+        karyawan4.displayInfo();   // Output: Rina: Staf + Di Semarang + Wanita
+        karyawan5.displayInfo();   // Output: Joko: Manajer + Di Semarang + Pria
+        karyawan6.displayInfo();   // Output: Dewi: Manajer + Di Semarang + Wanita
+
+        karyawan7.displayInfo();   // Output: Ali: Direktur + Di Jakarta + Pria
+        karyawan8.displayInfo();   // Output: Nina: Direktur + Di Jakarta + Wanita
+        karyawan9.displayInfo();   // Output: Fajar: Staf + Di Jakarta + Pria
+        karyawan10.displayInfo();  // Output: Lina: Staf + Di Jakarta + Wanita
+        karyawan11.displayInfo();  // Output: Tommy: Manajer + Di Jakarta + Pria
+        karyawan12.displayInfo();  // Output: Sari: Manajer + Di Jakarta + Wanita
+    }
+}
